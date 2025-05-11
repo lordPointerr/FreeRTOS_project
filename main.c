@@ -29,7 +29,7 @@ int main(void) {
 	// Create communication queue
 	xLevelQueue = xQueueCreate(5, sizeof(float));
 	
-	// Create tasks
+	// Create tasks for the handler
 	xTaskCreate(vSensorTask, "Sensor", 128, NULL, 3, NULL);
 	xTaskCreate(vPumpTask, "Pump", 128, NULL, 2, NULL);
 	xTaskCreate(vAlarmTask, "Alarm", 128, NULL, 1, NULL);
